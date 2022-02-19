@@ -16,7 +16,22 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			c.JSON(http.StatusOK, gin.H{
 				"Hello": "World!",
 				"name":  "shendu",
+				"version":  "1",
 			})
 		})
 	}
+
+	v2:=r.Group("v2")
+	{
+		v2.GET("/ok", func(c *gin.Context) {
+			// 以 JSON 格式响应
+			c.JSON(http.StatusOK, gin.H{
+				"Hello": "World!",
+				"name":  "shendu",
+				"version":  "2",
+			})
+		})
+
+	}
+
 }

@@ -14,7 +14,7 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
-var logger *zap.Logger
+var Logger *zap.Logger
 
 //获取日志写入介质
 func InitLogger(filename string, maxSize, maxBackup, maxAge int, compress bool, logType string, level string) {
@@ -27,7 +27,7 @@ func InitLogger(filename string, maxSize, maxBackup, maxAge int, compress bool, 
 	//初始化core
 	core := zapcore.NewCore(getEncoder(), writeSyncer, logLevel)
 	//初始化 Logger
-	logger = zap.New(core,
+	Logger = zap.New(core,
 		zap.AddCaller(),
 		zap.AddCallerSkip(1),
 		zap.AddStacktrace(zap.ErrorLevel))
@@ -96,30 +96,30 @@ func Dump(value interface{}, msg ...string) {
 	valueString := jsonString(value)
 	// 判断第二个参数是否传参 msg
 	if len(msg) > 0 {
-		logger.Warn("Dump", zap.String(msg[0], valueString))
+		Logger.Warn("Dump", zap.String(msg[0], valueString))
 	} else {
-		logger.Warn("Dump", zap.String("data", valueString))
+		Logger.Warn("Dump", zap.String("data", valueString))
 	}
 }
 
 //LogIf 当 err != nil 时记录 error 等级的日志
 func LogIf(err error) {
 	if err != nil {
-		logger.Error("Error Occurred:", zap.Error(err))
+		Logger.Error("Error Occurred:", zap.Error(err))
 	}
 }
 
 // LogWarnIf 当 err != nil 时记录 warning 等级的日志
 func LogWarnIf(err error) {
 	if err != nil {
-		logger.Warn("Error Occurred:", zap.Error(err))
+		Logger.Warn("Error Occurred:", zap.Error(err))
 	}
 }
 
 // LogInfoIf 当 err != nil 时记录 info 等级的日志
 func LogInfoIf(err error) {
 	if err != nil {
-		logger.Info("Error Occurred:", zap.Error(err))
+		Logger.Info("Error Occurred:", zap.Error(err))
 	}
 }
 
@@ -127,78 +127,78 @@ func LogInfoIf(err error) {
 // 调用示例：
 //  logger.Debug("Database", zap.String("sql", sql))
 func Debug(moduleName string, fields ...zap.Field) {
-	logger.Debug(moduleName, fields...)
+	Logger.Debug(moduleName, fields...)
 }
 
 // Info 告知类日志
 func Info(moduleName string, fields ...zap.Field) {
-	logger.Info(moduleName, fields...)
+	Logger.Info(moduleName, fields...)
 }
 
 // Warn 警告类
 func Warn(moduleName string, fields ...zap.Field) {
-	logger.Warn(moduleName, fields...)
+	Logger.Warn(moduleName, fields...)
 }
 
 // Error 错误时记录，不应该中断程序，查看日志时重点关注
 func Error(moduleName string, fields ...zap.Field) {
-	logger.Error(moduleName, fields...)
+	Logger.Error(moduleName, fields...)
 }
 
 // Fatal 级别同 Error(), 写完 log 后调用 os.Exit(1) 退出程序
 func Fatal(moduleName string, fields ...zap.Field) {
-	logger.Fatal(moduleName, fields...)
+	Logger.Fatal(moduleName, fields...)
 }
 
 // DebugString 记录一条字符串类型的 debug 日志，调用示例：
 //         logger.DebugString("SMS", "短信内容", string(result.RawResponse))
 func DebugString(moduleName, name, msg string) {
-	logger.Debug(moduleName, zap.String(name, msg))
+	Logger.Debug(moduleName, zap.String(name, msg))
 }
 
 func InfoString(moduleName, name, msg string) {
-	logger.Info(moduleName, zap.String(name, msg))
+	Logger.Info(moduleName, zap.String(name, msg))
 }
 
 func WarnString(moduleName, name, msg string) {
-	logger.Warn(moduleName, zap.String(name, msg))
+	Logger.Warn(moduleName, zap.String(name, msg))
 }
 
 func ErrorString(moduleName, name, msg string) {
-	logger.Error(moduleName, zap.String(name, msg))
+	Logger.Error(moduleName, zap.String(name, msg))
 }
 
 func FatalString(moduleName, name, msg string) {
-	logger.Fatal(moduleName, zap.String(name, msg))
+	Logger.Fatal(moduleName, zap.String(name, msg))
 }
 
 // DebugJSON 记录一条字符串类型的 debug 日志，调用示例：
 //         logger.DebugString("SMS", "短信内容", string(result.RawResponse))
 func DebugJSON(moduleName, name string, value interface{}) {
-	logger.Debug(moduleName, zap.String(name, jsonString(value)))
+	Logger.Debug(moduleName, zap.String(name, jsonString(value)))
 }
 
 func InfoJSON(moduleName, name string, value interface{}) {
-	logger.Info(moduleName, zap.String(name, jsonString(value)))
+	Logger.Info(moduleName, zap.String(name, jsonString(value)))
 }
 
 func WarnJSON(moduleName, name string, value interface{}) {
-	logger.Warn(moduleName, zap.String(name, jsonString(value)))
+	Logger.Warn(moduleName, zap.String(name, jsonString(value)))
 }
 
 func ErrorJSON(moduleName, name string, value interface{}) {
-	logger.Error(moduleName, zap.String(name, jsonString(value)))
+	Logger.Error(moduleName, zap.String(name, jsonString(value)))
 }
 
 func FatalJSON(moduleName, name string, value interface{}) {
-	logger.Fatal(moduleName, zap.String(name, jsonString(value)))
+	Logger.Fatal(moduleName, zap.String(name, jsonString(value)))
 }
 
 //转化为json字符串
 func jsonString(value interface{}) string {
 	b, err := json.Marshal(value)
 	if err != nil {
-		logger.Error("Logger", zap.String("Json marshal error", err.Error()))
+		Logger.Error("Logger", zap.String("Json marshal error", err.Error()))
 	}
 	return string(b)
 }

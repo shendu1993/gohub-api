@@ -1,9 +1,4 @@
-package locale
-
-//func Translate(key string) string {
-//	return messageText[key]
-//}
-
-return map[string]string{
-	"test": "测试-中文",
+{
+  "test": "test-en-US",
+  "category": "1,3,6"
 }

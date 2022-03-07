@@ -1,0 +1,9 @@
+package locale
+
+func Translate(key string) string {
+	return messageText[key]
+}
+
+var message_Text = map[string]string{
+	"test": "测试-中文",
+}

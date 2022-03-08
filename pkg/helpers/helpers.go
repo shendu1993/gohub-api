@@ -3,6 +3,7 @@ package helpers
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 	"reflect"
 	"time"
 )
@@ -39,10 +40,30 @@ func MicrosecondsStr(elapsed time.Duration) string {
 }
 
 //把JSON 数据转化为 map
-func JSONToMap(str string) interface{} {
-	var tempMap map[string]interface{}
-	if err := json.Unmarshal([]byte(str), &tempMap); err != nil {
-		return false
+func JSONToMap(filePath string) map[string]string {
+	//打开读取json文件
+	jsonFile, err := os.Open(filePath)
+	//结束的时候关闭文件流
+	defer jsonFile.Close()
+	if err != nil {
+		return nil
 	}
-	return tempMap
+	//把json文件转化为map
+	messageMap := make(map[string]string)
+	decoder := json.NewDecoder(jsonFile)
+	err = decoder.Decode(&messageMap)
+	if err != nil {
+		return nil
+	}
+	return messageMap
+}
+
+//获取app目录
+func GetAppPath() string {
+	dir, err := os.Getwd()
+	if err != nil {
+		return ""
+	}
+	filepath := dir + "\\app"
+	return filepath
 }

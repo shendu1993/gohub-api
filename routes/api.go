@@ -34,11 +34,13 @@ func RegisterAPIRoutes(r *gin.Engine) {
 	v2 := r.Group("v2")
 	{
 		v2.GET("/ok", func(c *gin.Context) {
+			content:=c.GetHeader("Accept-Language")
 			// 以 JSON 格式响应
 			c.JSON(http.StatusOK, gin.H{
 				"Hello":   "World!",
 				"name":    "shendu",
 				"version": "2",
+				"content":content,
 			})
 		})
 

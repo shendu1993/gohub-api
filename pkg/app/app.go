@@ -1,7 +1,9 @@
 // Package app 应用信息
 package app
 
-import "gohub-api/pkg/config"
+import (
+	"gohub-api/pkg/config"
+)
 
 func IsLocal() bool {
 	return config.Get("app.env") == "local"

@@ -3,6 +3,7 @@ package auth
 
 import (
 	v1 "gohub-api/app/http/controllers/api/v1"
+	"gohub-api/app/locale"
 	"gohub-api/app/models/user"
 	"gohub-api/app/requests"
 	"net/http"
@@ -25,7 +26,9 @@ func (sc *SignupController) IsPhoneExist(c *gin.Context) {
 
 	//  检查数据库并返回响应
 	c.JSON(http.StatusOK, gin.H{
-		"exist": user.IsPhoneExist(request.Phone),
+		"exist":          user.IsPhoneExist(request.Phone),
+		"test-exist":     locale.Translate(c, "test"),
+		"test-not-exist": locale.Translate(c, "test_not_exist"),
 	})
 }
 

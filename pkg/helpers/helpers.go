@@ -1,7 +1,9 @@
 package helpers
 
 import (
+	"encoding/json"
 	"fmt"
+	"os"
 	"reflect"
 	"time"
 )
@@ -30,8 +32,38 @@ func Empty(val interface{}) bool {
 	}
 	return reflect.DeepEqual(val, reflect.Zero(v.Type()).Interface())
 }
+
 // MicrosecondsStr 将 time.Duration 类型（nano seconds 为单位）
 // 输出为小数点后 3 位的 ms （microsecond 毫秒，千分之一秒）
 func MicrosecondsStr(elapsed time.Duration) string {
 	return fmt.Sprintf("%.3fms", float64(elapsed.Nanoseconds())/1e6)
+}
+
+//把JSON 数据转化为 map
+func JSONToMap(filePath string) map[string]string {
+	//打开读取json文件
+	jsonFile, err := os.Open(filePath)
+	//结束的时候关闭文件流
+	defer jsonFile.Close()
+	if err != nil {
+		return nil
+	}
+	//把json文件转化为map
+	messageMap := make(map[string]string)
+	decoder := json.NewDecoder(jsonFile)
+	err = decoder.Decode(&messageMap)
+	if err != nil {
+		return nil
+	}
+	return messageMap
+}
+
+//获取app目录
+func GetAppPath() string {
+	dir, err := os.Getwd()
+	if err != nil {
+		return ""
+	}
+	filepath := dir + "\\app"
+	return filepath
 }

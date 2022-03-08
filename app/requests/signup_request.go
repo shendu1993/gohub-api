@@ -30,6 +30,7 @@ func SignupPhoneExist(data interface{}, c *gin.Context) map[string][]string {
 type SignupEmailExistRequest struct {
 	Email string `json:"email,omitempty" valid:"email"`
 }
+
 func SignupEmailExist(data interface{}, c *gin.Context) map[string][]string {
 	// 自定义验证规则
 	rules := govalidator.MapData{

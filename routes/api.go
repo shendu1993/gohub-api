@@ -24,9 +24,13 @@ func RegisterAPIRoutes(r *gin.Engine) {
 		{
 			suc := new(auth.SignupController)
 			//判断手机是否注册
-			authGroup.POST("/signup/phone/exist",suc.IsPhoneExist)
+			authGroup.POST("/signup/phone/exist", suc.IsPhoneExist)
 			//判断手机是否注册
-			authGroup.POST("/signup/email/exist",suc.IsEmailExist)
+			authGroup.POST("/signup/email/exist", suc.IsEmailExist)
+			//发送验证码
+			vcc := new(auth.VerifyCodeController)
+			//图片验证码，需要加限流
+			authGroup.POST("/verify-codes/captcha", vcc.ShowCaptcha)
 		}
 
 	}
@@ -34,13 +38,13 @@ func RegisterAPIRoutes(r *gin.Engine) {
 	v2 := r.Group("v2")
 	{
 		v2.GET("/ok", func(c *gin.Context) {
-			content:=c.GetHeader("Accept-Language")
+			content := c.GetHeader("Accept-Language")
 			// 以 JSON 格式响应
 			c.JSON(http.StatusOK, gin.H{
 				"Hello":   "World!",
 				"name":    "shendu",
 				"version": "2",
-				"content":content,
+				"content": content,
 			})
 		})
 

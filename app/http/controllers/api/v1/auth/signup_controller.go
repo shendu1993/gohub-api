@@ -6,7 +6,7 @@ import (
 	"gohub-api/app/locale"
 	"gohub-api/app/models/user"
 	"gohub-api/app/requests"
-	"net/http"
+	"gohub-api/pkg/response"
 
 	"github.com/gin-gonic/gin"
 )
@@ -23,9 +23,8 @@ func (sc *SignupController) IsPhoneExist(c *gin.Context) {
 	if ok := requests.Validate(c, &request, requests.SignupPhoneExist); !ok {
 		return
 	}
-
 	//  检查数据库并返回响应
-	c.JSON(http.StatusOK, gin.H{
+	response.JSON(c, gin.H{
 		"exist":          user.IsPhoneExist(request.Phone),
 		"test-exist":     locale.Translate(c, "test"),
 		"test-not-exist": locale.Translate(c, "test_not_exist"),
@@ -38,7 +37,7 @@ func (sc *SignupController) IsEmailExist(c *gin.Context) {
 	if ok := requests.Validate(c, &request, requests.SignupEmailExist); !ok {
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{
+	response.JSON(c, gin.H{
 		"exist": user.IsEmailExist(request.Email),
 	})
 }

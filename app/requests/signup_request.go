@@ -90,6 +90,7 @@ func SignupUsingPhone(data interface{}, c *gin.Context) map[string][]string {
 			"digits:验证码长度必须为 6 位的数字",
 		},
 	}
+	errs := validate(data, rules, messages)
 	_data := data.(*SignupUsingPhoneRequest)
 	errs = validators.ValidatePasswordConfirm(_data.Password, _data.PasswordConfirm, errs)
 	errs = validators.ValidateVerifyCode(_data.Phone, _data.VerifyCode, errs)

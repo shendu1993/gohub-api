@@ -53,7 +53,7 @@ func SignupEmailExist(data interface{}, c *gin.Context) map[string][]string {
 // SignupUsingPhoneRequest 通过手机注册的请求信息
 type SignupUsingPhoneRequest struct {
 	Phone           string `json:"phone, omitempty" valid:"phone"`
-	VerifyCode      string `json:"verify_code,omitempty " valid:"verify_code " `
+	VerifyCode      string `json:"verify_code,omitempty " valid:"verify_code" `
 	Name            string `valid:"name" json:"name"`
 	Password        string `valid:"password" json:"password,omitempty"`
 	PasswordConfirm string `valid:"password_confirm" json:"password_confirm,omitempty"`

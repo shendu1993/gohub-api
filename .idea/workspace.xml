@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/requests/verify_code_request.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/verify_code_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/verify_code_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/requests/validators/custom_validators.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/requests/validators/custom_validators.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/verifycode/verifycode.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/verifycode/verifycode.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

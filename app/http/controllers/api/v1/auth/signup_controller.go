@@ -46,10 +46,8 @@ func (sc *SignupController) IsEmailExist(c *gin.Context) {
 func (sc *SignupController) SignupUsingPhone(c *gin.Context) {
 	// 1.验证表单
 	request := requests.SignupUsingPhoneRequest{}
-	{
-		if ok := requests.Validate(c, &request, requests.SignupUsingPhone); !ok {
-			return
-		}
+	if ok := requests.Validate(c, &request, requests.SignupUsingPhone); !ok {
+		return
 	}
 	// 2.验证成功，创建数据
 	_user := user.User{
@@ -58,5 +56,20 @@ func (sc *SignupController) SignupUsingPhone(c *gin.Context) {
 		Password: request.Password,
 	}
 	_user.Create()
-
+	response.Success(c)
+}
+func (sc *SignupController) SignupUsingEmail(c *gin.Context) {
+	//参数校验
+	request := requests.SignupUsingEmailRequest{}
+	if ok := requests.Validate(c, &request, requests.SignupUsingEmail); !ok {
+		return
+	}
+	//创建数据
+	_user := user.User{
+		Name:     request.Name,
+		Phone:    request.Email,
+		Password: request.Password,
+	}
+	_user.Create()
+	response.Success(c)
 }

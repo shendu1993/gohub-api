@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/captcha/captcha.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/requests/verify_code_request.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/captcha/store_redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/captcha/store_redis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/verify_code_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/verify_code_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requests/validators/custom_validators.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/requests/validators/custom_validators.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/verifycode/verifycode.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/verifycode/verifycode.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gohub" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">

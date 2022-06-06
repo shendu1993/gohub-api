@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/user/user_hooks.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/hash/hash.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/jwt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/jwt/jwt.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user/user_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user/user_model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/signup_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/signup_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/model.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/build-errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/build-errors.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/app/app.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +52,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gohub" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">

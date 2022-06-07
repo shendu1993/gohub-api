@@ -16,7 +16,8 @@ import (
 func Recovery() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		defer func() {
-			if err := recover(); err != nil {
+			var err any = recover()
+			if err = recover(); err != nil {
 				//获取用户的请求信息
 				httpRequest, _ := httputil.DumpRequest(c.Request, true)
 
@@ -50,7 +51,7 @@ func Recovery() gin.HandlerFunc {
 					zap.String("request", string(httpRequest)), // 请求信息
 					zap.Stack("stacktrace"),                    // 调用堆栈信息
 				)
-			// 返回 500 状态码
+				// 返回 500 状态码
 				response.Abort500(c)
 
 			}

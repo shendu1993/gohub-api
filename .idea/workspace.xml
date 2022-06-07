@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/http/middlewares/auth_jwt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/http/middlewares/guest_jwt.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/http/middlewares/recovery.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/middlewares/recovery.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user/user_util.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user/user_util.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/main.exe" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

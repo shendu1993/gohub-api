@@ -34,3 +34,24 @@ func (lc *LoginController) LoginByPhone(c *gin.Context) {
 	}
 
 }
+
+// LoginByPassword 多种方法登录，支持手机号、email 和用户名
+func (lc *LoginController) LoginByPassword(c *gin.Context) {
+	//1.表单验证
+	request := requests.LoginByPhonePasswordRequest{}
+	if ok := requests.Validate(c, &request, requests.LoginByPhonePassword); !ok {
+		return
+	}
+	//2.登录
+	user, err := auth.Attempt(request.LoginId, request.Password)
+	if err != nil {
+		// 失败，显示错误提示
+		response.Unauthorized(c, "登录失败")
+	} else {
+		token := jwt.NewJWT().IssueToken(user.GetStringID(), user.Name)
+		response.JSON(c, gin.H{
+			"token": token,
+		})
+	}
+
+}

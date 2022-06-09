@@ -16,8 +16,7 @@ import (
 func Recovery() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		defer func() {
-			var err any = recover()
-			if err = recover(); err != nil {
+			if err := recover(); err != nil {
 				//获取用户的请求信息
 				httpRequest, _ := httputil.DumpRequest(c.Request, true)
 

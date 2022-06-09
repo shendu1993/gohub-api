@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/http/middlewares/guest_jwt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/password_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/requests/password_request.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/main.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/middlewares/recovery.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/middlewares/recovery.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user/user_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user/user_model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user/user_util.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user/user_util.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/build-errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/build-errors.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,13 +38,16 @@
     <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="25vBInF29clYnCThrGOfW0Kz7Hd" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -119,6 +129,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/roadrunner" />
     </ignored-roots>

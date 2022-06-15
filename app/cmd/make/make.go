@@ -37,6 +37,7 @@ func init() {
 	//注册 make的子命令
 	CmdMake.AddCommand(
 		CmdMakeCMD,
+		CmdMakeModel,
 	)
 }
 

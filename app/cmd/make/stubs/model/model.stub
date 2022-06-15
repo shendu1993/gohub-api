@@ -1,0 +1,32 @@
+// Package {{PackageName}} 模型
+package {{PackageName}}
+
+import (
+	"gohub-api/app/models"
+	"gohub-api/pkg/database"
+)
+
+type {{StructName}}  struct {
+	models.BaseModel
+    // Put fields in here
+     FIXME()
+	models.CommonTimestampsField
+}
+
+//Create
+func ({{VariableName}} *{{StructName}}) Create() {
+	database.DB.Create(&{{VariableName}})
+}
+
+
+//Save
+func ({{VariableName}} *{{StructName}}) Save() (RowsAffected int64) {
+	result := database.DB.Save(&{{VariableName}})
+	return result.RowsAffected
+}
+
+//Delete
+func ({{VariableName}} *{{StructName}}) Delete() (rowsAffected int64) {
+    result := database.DB.Delete(&{{VariableName}})
+    return result.RowsAffected
+}

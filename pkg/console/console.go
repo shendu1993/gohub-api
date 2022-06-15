@@ -32,3 +32,10 @@ func Exit(msg string) {
 func colorOut(message, color string) {
 	fmt.Fprintln(os.Stdout, ansi.Color(message, color))
 }
+
+// ExitIf 语法糖，自带 err != nil 判断
+func ExitIf(err error) {
+	if err != nil {
+		Exit(err.Error())
+	}
+}

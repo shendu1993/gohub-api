@@ -2,8 +2,9 @@ package make
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"gohub-api/pkg/console"
+
+	"github.com/spf13/cobra"
 )
 
 var CmdMakeCMD = &cobra.Command{

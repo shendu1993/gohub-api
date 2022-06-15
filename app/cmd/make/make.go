@@ -3,11 +3,13 @@ package make
 import (
 	"embed"
 	"fmt"
-	"github.com/spf13/cobra"
 	"gohub-api/pkg/console"
 	"gohub-api/pkg/file"
 	"gohub-api/pkg/str"
+
 	"strings"
+
+	"github.com/spf13/cobra"
 )
 
 // Package make 命令行的 make 命令

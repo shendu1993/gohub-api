@@ -21,6 +21,7 @@ type Model struct {
 	VariableName       string
 	VariableNamePlural string
 	PackageName        string
+	VersionName        string
 }
 
 //stubsFs 方便我们后面打包这些 .stub为后缀的文件
@@ -40,11 +41,12 @@ func init() {
 	CmdMake.AddCommand(
 		CmdMakeCMD,
 		CmdMakeModel,
+		CmdMakeAPIController,
 	)
 }
 
 //makeModelFromString 格式化用户输入的内容
-func makeModelFromString(name string) Model {
+func makeModelFromString(name string, version ...string) Model {
 	model := Model{}
 	model.StructName = str.Singular(str.Camel(name))
 	model.StructNamePlural = str.Plural(model.StructName)
@@ -52,6 +54,11 @@ func makeModelFromString(name string) Model {
 	model.VariableName = str.LowerCamel(model.StructName)
 	model.PackageName = str.Snake(model.StructName)
 	model.VariableNamePlural = str.LowerCamel(model.StructNamePlural)
+	if len(version) > 0 {
+		model.VersionName = version[0]
+	} else {
+		model.VersionName = ""
+	}
 	return model
 }
 
@@ -80,6 +87,7 @@ func createFileFromStub(filePath string, stubName string, model Model, variables
 	replaces["{{StructNamePlural}}"] = model.StructNamePlural
 	replaces["{{PackageName}}"] = model.PackageName
 	replaces["{{TableName}}"] = model.TableName
+	replaces["{{VersionName}}"] = model.VersionName
 
 	//对模板内容做变量替换
 	for search, replace := range replaces {

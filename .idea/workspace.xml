@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/locale/locale.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/cmd/make/make_apicontroller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/cmd/make/stubs/apicontroller.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/main.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cmd/play.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/cmd/play.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/signup_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/signup_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/locale/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/en-US.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/locale/locale.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/locale/zh-CN.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/zh-CN.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/route.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/response/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/response/response.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/str/str.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/str/str.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/cmd/make/make.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/build-errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/build-errors.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

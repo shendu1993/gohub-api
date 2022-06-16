@@ -3,10 +3,10 @@ package auth
 
 import (
 	v1 "gohub-api/app/http/controllers/api/v1"
-	"gohub-api/app/locale"
 	"gohub-api/app/models/user"
 	"gohub-api/app/requests"
 	"gohub-api/pkg/jwt"
+	"gohub-api/pkg/locale"
 	"gohub-api/pkg/response"
 
 	"github.com/gin-gonic/gin"

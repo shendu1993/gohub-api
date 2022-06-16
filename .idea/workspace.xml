@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pkg/locale/locale.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cmd/make/make.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/cmd/make/make.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cmd/make/make_cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/cmd/make/make_cmd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/play.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/cmd/play.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/signup_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/api/v1/auth/signup_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/locale/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/en-US.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/locale/locale.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/locale/zh-CN.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/zh-CN.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/response/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/response/response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/str/str.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/str/str.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/build-errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/build-errors.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,24 +58,26 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "configurable..is.expanded": "false",
-    "configurable.GoLibrariesConfigurable.is.expanded": "true",
-    "go.import.settings.migrated": "true",
-    "last_opened_file_path": "E:/GO/Code/src/shendu/studygo/gohub-api",
-    "settings.editor.selected.configurable": "watcher.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;configurable..is.expanded&quot;: &quot;false&quot;,
+    &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/GO/Code/src/shendu/studygo/gohub-api&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\GO\Code\src\shendu\studygo\gohub-api\app\locale" />

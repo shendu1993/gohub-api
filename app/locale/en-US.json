@@ -3,7 +3,7 @@
   "success": "success!",
   "400_default_message": "Request parsing error, please confirm whether the request format is correct. Please use the multipart header for uploading files, and use JSON format for parameters.",
   "401_default_message": "Request parsing error, please confirm whether the request format is correct. Please use the multipart header for uploading files, and use JSON format for parameters.",
-  "404_default_message": "The data does not exist, please make sure the request is correct",
+  "404_default_message": "The route is not defined, please confirm whether the url and request method are correct",
   "403_default_message": "Insufficient permissions, please make sure you have the corresponding permissions",
   "422_default_message": "Request processing failed, please check the value of error",
   "500_default_message": "Internal server error, please try again later",

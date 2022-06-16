@@ -19,4 +19,6 @@ func runPlay(cmd *cobra.Command, args []string) {
 	redis.Redis.Set("hello", "hi from redis", 10*time.Second)
 	//从redis里取出
 	console.Success(redis.Redis.Get("hello"))
+	console.Error("这是一条红色的警告消息")
+	console.Warning("这是一条黄色的警告消息")
 }

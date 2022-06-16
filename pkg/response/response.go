@@ -1,7 +1,7 @@
 package response
 
 import (
-	"gohub-api/app/locale"
+	"gohub-api/pkg/locale"
 	"gohub-api/pkg/logger"
 	"net/http"
 
@@ -92,6 +92,7 @@ func Error(c *gin.Context, err error, msg ...string) {
 		"error":   err.Error(),
 	})
 }
+
 // ValidationError 处理表单验证不通过的错误，返回的 JSON 示例：
 //         {
 //             "errors": {

@@ -1,7 +1,10 @@
 package locale
 
 import (
+	"gohub-api/pkg/config"
 	"gohub-api/pkg/helpers"
+	"gohub-api/pkg/str"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -24,5 +27,15 @@ func Translate(c *gin.Context, key string) string {
 //获取Accept-Language
 func GetAcceptLanguage(c *gin.Context) string {
 	language := c.GetHeader("Accept-Language")
-	return language
+	//如果从Accept-Language获取不到，设置默认语言
+	if helpers.Empty(language) {
+		return config.GetString("app.language")
+	}
+	//把支持的语言分割为数组
+	SupportLanguageArr := strings.Split(config.GetString("app.support_language"), ",")
+	//如果不在支持的语言内，则返回默认语言
+	if str.InArray(language, SupportLanguageArr) {
+		return language
+	}
+	return config.GetString("app.language")
 }

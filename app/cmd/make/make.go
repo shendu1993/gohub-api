@@ -42,6 +42,7 @@ func init() {
 		CmdMakeCMD,
 		CmdMakeModel,
 		CmdMakeAPIController,
+		CmdMakeRequest,
 	)
 }
 
@@ -101,5 +102,5 @@ func createFileFromStub(filePath string, stubName string, model Model, variables
 		}
 	}
 	//提示成功
-	console.Success(fmt.Sprint("[%] created", filePath))
+	console.Success(fmt.Sprint("[%] created ", filePath))
 }

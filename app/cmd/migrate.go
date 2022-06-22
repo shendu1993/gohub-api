@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"gohub-api/pkg/database/migrations"
+	"gohub-api/database/migrations"
 	"gohub-api/pkg/migrate"
 
 	"github.com/spf13/cobra"

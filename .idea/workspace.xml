@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/cmd/migrate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/database/migrations/migrations.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/migrate/migration_file.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/cmd/make/make_migration.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/cmd/make/stubs/migration.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_06_22_142216_add_users_table.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/main.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/file/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/file/file.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/migrate/migrate_file.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/migrate/migrate_file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/make/make.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/cmd/make/make.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/migrate.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/cmd/migrate.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cmd/serve.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/cmd/serve.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/database.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/database/database.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/migrations/migrations.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/migrations.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/migrate/migrate_file.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/migrate/migration_file.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/migrate/migration_file.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/migrate/migrator.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/migrate/migrator.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/build-errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/build-errors.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,31 +59,33 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "configurable..is.expanded": "false",
-    "configurable.GoLibrariesConfigurable.is.expanded": "true",
-    "go.import.settings.migrated": "true",
-    "last_opened_file_path": "E:/GO/Code/src/shendu/studygo/gohub-api",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;configurable..is.expanded&quot;: &quot;false&quot;,
+    &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/GO/Code/src/shendu/studygo&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\GO\Code\src\shendu\studygo\gohub-api\app\locale" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\GO\Code\src\shendu\studygo\gohub-api\database\migrations" />
+      <recent name="E:\GO\Code\src\shendu\studygo\gohub-api\database" />
       <recent name="E:\GO\Code\src\shendu\studygo\gohub-api\app\requests" />
     </key>
   </component>

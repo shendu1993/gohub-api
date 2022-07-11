@@ -1,6 +1,7 @@
 package routes
 
 import (
+	controllers "gohub-api/app/http/controllers/api/v1"
 	"gohub-api/app/http/controllers/api/v1/auth"
 	"gohub-api/app/http/middlewares"
 	"net/http"
@@ -8,6 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// RegisterAPIRoutes 注册 API 相关路由
 func RegisterAPIRoutes(r *gin.Engine) {
 	// 测试一个 v1 的路由组，我们所有的 v1 版本的路由都将存放到这里
 	v1 := r.Group("/v1")
@@ -51,6 +53,9 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			authGroup.POST("/verify-codes/captcha", middlewares.LimitPerRoute("50-H"), vcc.ShowCaptcha)
 		}
 
+		uc := new(controllers.UsersController)
+		// 获取当前用户
+		v1.GET("/user", middlewares.AuthJWT(), uc.CurrentUser)
 	}
 
 	v2 := r.Group("v2")

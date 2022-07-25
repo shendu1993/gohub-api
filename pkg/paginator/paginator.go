@@ -83,6 +83,7 @@ func (p *Paginator) initProperties(perPage int, baseURL string) {
 
 	p.TotalCount = p.getTotalCount()
 	p.TotalPage = p.getTotalPage()
+	p.Page = p.getCurrentPage()
 	p.Offset = (p.Page - 1) * p.PerPage
 }
 
@@ -94,12 +95,12 @@ func (p Paginator) getNextPageURL() string {
 	return ""
 }
 
-//getPrevPageURL 返回下一页的连接
+//getPrevPageURL 返回上一页的连接
 func (p Paginator) getPrevPageURL() string {
-	if p.TotalPage > p.Page {
-		return p.getPageLink(p.Page + 1)
+	if p.Page <= 1 || p.Page > p.TotalPage {
+		return ""
 	}
-	return ""
+	return p.getPageLink(p.Page - 1)
 }
 
 //getTotalPage 计算总页数
@@ -107,7 +108,7 @@ func (p Paginator) getTotalPage() int {
 	if p.TotalCount == 0 {
 		return 0
 	}
-	nums := int64(math.Ceil(float64(p.TotalCount)) / float64(p.TotalPage))
+	nums := int64(math.Ceil(float64(p.TotalCount)) / float64(p.PerPage))
 	if nums == 0 {
 		nums = 1
 	}
@@ -121,6 +122,26 @@ func (p *Paginator) getTotalCount() int64 {
 		return 0
 	}
 	return count
+}
+
+// getCurrentPage 返回当前页码
+func (p *Paginator) getCurrentPage() int {
+	// 优先取用户请求的 page
+	page := cast.ToInt(p.ctx.Query(config.Get("paging.url_query_page")))
+	if page <= 0 {
+		// 默认为 1
+		page = 1
+	}
+	// TotalPage 等于 0 ，意味着数据不够分页
+	if p.TotalPage == 0 {
+		return 0
+	}
+	// 请求页数大于总页数，返回总页数
+	if page > p.TotalPage {
+		return p.TotalPage
+	}
+	return page
+
 }
 
 // 兼容 URL 带与不带 `?` 的情况

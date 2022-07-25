@@ -2,6 +2,7 @@ package v1
 
 import (
 	"gohub-api/app/models/user"
+	"gohub-api/app/requests"
 	"gohub-api/pkg/auth"
 	"gohub-api/pkg/response"
 
@@ -20,6 +21,10 @@ func (ctrl *UsersController) CurrentUser(c *gin.Context) {
 
 //Index 所有用户
 func (ctrl *UsersController) Index(c *gin.Context) {
+	request := requests.PaginationRequest{}
+	if ok := requests.Validate(c, &request, requests.Pagination); !ok {
+		return
+	}
 	data, pager := user.Paginate(c, 10)
 	response.JSON(c, gin.H{
 		"data":  data,

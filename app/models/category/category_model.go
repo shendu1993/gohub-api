@@ -6,10 +6,10 @@ import (
 	"gohub-api/pkg/database"
 )
 
-type Category  struct {
+type Category struct {
 	models.BaseModel
-    // Put fields in here
-    // FIXME()
+	Name        string `json:"name,omitempty"`        //名称
+	Description string `json:"description,omitempty"` //描述
 	models.CommonTimestampsField
 }
 
@@ -17,7 +17,6 @@ type Category  struct {
 func (category *Category) Create() {
 	database.DB.Create(&category)
 }
-
 
 //Save
 func (category *Category) Save() (RowsAffected int64) {
@@ -27,6 +26,6 @@ func (category *Category) Save() (RowsAffected int64) {
 
 //Delete
 func (category *Category) Delete() (rowsAffected int64) {
-    result := database.DB.Delete(&category)
-    return result.RowsAffected
+	result := database.DB.Delete(&category)
+	return result.RowsAffected
 }

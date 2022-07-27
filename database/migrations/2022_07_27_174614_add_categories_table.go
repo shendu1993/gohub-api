@@ -1,30 +1,29 @@
 package migrations
 
 import (
-    "database/sql"
-    "gohub-api/app/models"
-    "gohub-api/pkg/migrate"
+	"database/sql"
+	"gohub-api/app/models"
+	"gohub-api/pkg/migrate"
 
-    "gorm.io/gorm"
+	"gorm.io/gorm"
 )
 
 func init() {
 
-    type Category struct {
-        models.BaseModel
-        // Name     string `gorm:"type:varchar(255);not null;index"`
-        // Put fields in here
-        // FIXME()
-        models.CommonTimestampsField
-    }
+	type Category struct {
+		models.BaseModel
+		Name        string `gorm:"type:varchar(255);not null;index"`
+		Description string `gorm:"type:varchar(255);default:null"`
+		models.CommonTimestampsField
+	}
 
-    up := func(migrator gorm.Migrator, DB *sql.DB) {
-        migrator.AutoMigrate(&Category{})
-    }
+	up := func(migrator gorm.Migrator, DB *sql.DB) {
+		migrator.AutoMigrate(&Category{})
+	}
 
-    down := func(migrator gorm.Migrator, DB *sql.DB) {
-        migrator.DropTable(&Category{})
-    }
+	down := func(migrator gorm.Migrator, DB *sql.DB) {
+		migrator.DropTable(&Category{})
+	}
 
-    migrate.Add("2022_07_27_174614_add_categories_table", up, down)
+	migrate.Add("2022_07_27_174614_add_categories_table", up, down)
 }

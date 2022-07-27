@@ -14,14 +14,17 @@ var CmdMakeMigration = &cobra.Command{
 	Use:   "migration",
 	Short: "Create a migration file, example: make migration add_users_table",
 	Run:   runMakeMigration,
-	Args:  cobra.ExactArgs(1), //值允许一个参数
+	Args:  cobra.ExactArgs(2), //第一个参数是模型/表名字 第二个参数是行为名字
 }
 
 func runMakeMigration(cmd *cobra.Command, args []string) {
 	//日期格式化
 	timeStr := app.TimenowInTimezone().Format("2006_01_02_150405")
+	//模型名称
 	model := makeModelFromString(args[0])
-	fileName := timeStr + "_" + model.PackageName
+	//行为名称
+	actName := args[1]
+	fileName := timeStr + "_" + actName
 	//判断文件夹是否存在，不存在就创建一个
 	dirPath := "database/migrations"
 	if !file.Exists(dirPath) {

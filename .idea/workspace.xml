@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tmp/main.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/locale/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/en-US.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/locale/zh-CN.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/zh-CN.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/requests/pagination_request.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/requests/pagination_request.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/build-errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/build-errors.log" afterDir="false" />
-    </list>
+    <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

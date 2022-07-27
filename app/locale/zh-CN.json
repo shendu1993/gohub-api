@@ -3,9 +3,13 @@
   "success": "操作成功",
   "400_default_message": "请求解析错误，请确认请求格式是否正确。上传文件请使用 multipart 标头，参数请使用 JSON 格式。",
   "401_default_message": "数据不存在，请确定请求正确",
-  "404_default_message": "数据不存在，请确定请求正确",
+  "404_default_message": "路由未定义，请确认 url 和请求方法是否正确2022",
   "403_default_message": "权限不足，请确定您有对应的权限",
   "422_default_message": "请求处理失败，请查看 error 的值",
   "500_default_message": "服务器内部错误，请稍后再试",
-  "validationError_default_message": "请求验证不通过，具体请查看 errors"
+  "validationError_default_message": "请求验证不通过，具体请查看 errors",
+  "users_validate_page": "当前页码的值介于1-1000之间的数字",
+  "users_validate_sort": "排序字段仅支持 id,created_at,updated_at",
+  "users_validate_order": "排序规则仅支持 asc（正序）,desc（倒序）",
+  "users_validate_per_page": "每页条数的值介于 2~100 之间"
 }

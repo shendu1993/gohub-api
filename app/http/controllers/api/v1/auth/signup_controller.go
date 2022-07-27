@@ -3,9 +3,10 @@ package auth
 
 import (
 	v1 "gohub-api/app/http/controllers/api/v1"
-	"gohub-api/app/locale"
 	"gohub-api/app/models/user"
 	"gohub-api/app/requests"
+	"gohub-api/pkg/jwt"
+	"gohub-api/pkg/locale"
 	"gohub-api/pkg/response"
 
 	"github.com/gin-gonic/gin"
@@ -40,4 +41,52 @@ func (sc *SignupController) IsEmailExist(c *gin.Context) {
 	response.JSON(c, gin.H{
 		"exist": user.IsEmailExist(request.Email),
 	})
+}
+
+// SignupUsingPhone 使用手机和验证码进行注册
+func (sc *SignupController) SignupUsingPhone(c *gin.Context) {
+	// 1.验证表单
+	request := requests.SignupUsingPhoneRequest{}
+	if ok := requests.Validate(c, &request, requests.SignupUsingPhone); !ok {
+		return
+	}
+	// 2.验证成功，创建数据
+	userModel := user.User{
+		Name:     request.Name,
+		Phone:    request.Phone,
+		Password: request.Password,
+	}
+	userModel.Create()
+	if userModel.ID > 0 {
+		token := jwt.NewJWT().IssueToken(userModel.GetStringID(), userModel.Name)
+		response.CreatedJSON(c, gin.H{
+			"token": token,
+			"data":  userModel,
+		})
+	} else {
+		response.Abort500(c, "创建用户失败，请稍后尝试~")
+	}
+}
+func (sc *SignupController) SignupUsingEmail(c *gin.Context) {
+	//参数校验
+	request := requests.SignupUsingEmailRequest{}
+	if ok := requests.Validate(c, &request, requests.SignupUsingEmail); !ok {
+		return
+	}
+	//创建数据
+	userModel := user.User{
+		Name:     request.Name,
+		Phone:    request.Email,
+		Password: request.Password,
+	}
+	userModel.Create()
+	if userModel.ID > 0 {
+		token := jwt.NewJWT().IssueToken(userModel.GetStringID(), userModel.Name)
+		response.CreatedJSON(c, gin.H{
+			"token": token,
+			"data":  userModel,
+		})
+	} else {
+		response.Abort500(c, "创建用户失败，请稍后尝试~")
+	}
 }

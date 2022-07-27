@@ -27,6 +27,12 @@ func init() {
 
 			// 设置时区，JWT 里会使用，日志记录里也会使用到
 			"timezone": config.Env("TIMEZONE", "Asia/Shanghai"),
+
+			// 设置默认语言
+			"language": config.Env("LANGUAGE", "zh-CN"),
+
+			//支持的语言
+			"support_language": config.Env("SUPPORT_LANGUAGE", "zh-CN,en-US"),
 		}
 	})
 }

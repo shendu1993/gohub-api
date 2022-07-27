@@ -2,6 +2,7 @@ package bootstrap
 
 import (
 	"gohub-api/app/http/middlewares"
+	"gohub-api/pkg/locale"
 	"gohub-api/routes"
 	"net/http"
 	"strings"
@@ -34,12 +35,12 @@ func setup404Handler(router *gin.Engine) {
 
 		if strings.Contains(acceptString, "text/html") {
 			//如果是html
-			c.String(http.StatusNotFound, "shendu-Not Found 404")
+			c.String(http.StatusNotFound, locale.Translate(c, "404_default_message"))
 		} else {
 			//默认返回json格式
 			c.JSON(http.StatusNotFound, gin.H{
 				"error_code":    404,
-				"error_message": "路由未定义，请确认 url 和请求方法是否正确。",
+				"error_message": locale.Translate(c, "404_default_message"),
 			})
 		}
 	})

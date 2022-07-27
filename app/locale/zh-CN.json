@@ -11,5 +11,11 @@
   "users_validate_page": "当前页码的值介于1-1000之间的数字",
   "users_validate_sort": "排序字段仅支持 id,created_at,updated_at",
   "users_validate_order": "排序规则仅支持 asc（正序）,desc（倒序）",
-  "users_validate_per_page": "每页条数的值介于 2~100 之间"
+  "users_validate_per_page": "每页条数的值介于 2~100 之间",
+  "category_validate_name_required": "名称为必填项",
+  "category_validate_name_min_cn": "名称长度需至少 2 个字",
+  "category_validate_name_max_cn": "名称长度不能超过 8 个字",
+  "category_validate_name_not_exists": "名称已经存在",
+  "category_validate_description_min_cn": "描述长度需至少 3 个字",
+  "category_validate_description_max_cn": "描述长度不能超过 255 个字"
 }

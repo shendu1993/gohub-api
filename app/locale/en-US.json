@@ -11,5 +11,11 @@
   "users_validate_page": "The value of the current page number is a number between 1-1000",
   "users_validate_sort": "Sort fields only support id, created_at, updated_at",
   "users_validate_order": "The collation only supports asc (positive order), desc (reverse order)",
-  "users_validate_per_page": "The value of the number of entries per page is between 2 and 100"
+  "users_validate_per_page": "The value of the number of entries per page is between 2 and 100",
+  "category_validate_name_required": "名称为必填项",
+  "category_validate_name_min_cn": "名称长度需至少 2 个字",
+  "category_validate_name_max_cn": "名称长度不能超过 8 个字",
+  "category_validate_name_not_exists": "名称已经存在",
+  "category_validate_description_min_cn": "描述长度需至少 3 个字",
+  "category_validate_description_max_cn": "描述长度不能超过 255 个字"
 }

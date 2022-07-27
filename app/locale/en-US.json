@@ -7,5 +7,9 @@
   "403_default_message": "Insufficient permissions, please make sure you have the corresponding permissions",
   "422_default_message": "Request processing failed, please check the value of error",
   "500_default_message": "Internal server error, please try again later",
-  "validationError_default_message": "Request verification failed, please see errors for details"
+  "validationError_default_message": "Request verification failed, please see errors for details",
+  "users_validate_page": "The value of the current page number is a number between 1-1000",
+  "users_validate_sort": "Sort fields only support id, created_at, updated_at",
+  "users_validate_order": "The collation only supports asc (positive order), desc (reverse order)",
+  "users_validate_per_page": "The value of the number of entries per page is between 2 and 100"
 }

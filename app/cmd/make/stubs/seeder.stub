@@ -13,11 +13,11 @@ import (
 func init() {
 
 	seed.Add("Seed{{StructNamePlural}}Table", func(db *gorm.DB) {
-		//创建10个用户对象
-		users := factories.MakeUsers(10)
+		//创建10条数据
+		{{VariableName}} := factories.Make{{StructNamePlural}}(10)
 		//批量创建用户（注意批创建不会条用模型钩子）
 
-		result := db.Table("{{TableName}}").Create(&users)
+		result := db.Table("{{TableName}}").Create(&{{VariableName}})
 
 		//记录错误
 		if err := result.Error; err != nil {

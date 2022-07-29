@@ -80,4 +80,26 @@ func init() {
 		}
 		return nil
 	})
+
+	// exists:categories,id 在表categories是否存在id = xxx的内容
+	govalidator.AddCustomRule("exists", func(field string, rule string, message string, value interface{}) error {
+		rng := strings.Split(strings.TrimPrefix(rule, "exists:"), ",")
+		//表名字 比如categories
+		TableName := rng[0]
+		//字段比如 id
+		dbFiled := rng[1]
+		requestValue := value.(string)
+		query := database.DB.Table(TableName).Where(dbFiled+"=?", requestValue)
+		var count int64
+		query.Count(&count)
+		if count < 1 {
+			//如果有自定义消息的话
+			if message != "" {
+				return errors.New(message)
+			}
+			// 默认的错误消息
+			return fmt.Errorf("%v 不存在", requestValue)
+		}
+		return nil
+	})
 }

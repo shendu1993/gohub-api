@@ -22,7 +22,7 @@ func init() {
 		Body       string `gorm:"type:longtext;not null"`
 		UserID     string `gorm:"type:bigint;not null;index"`
 		CategoryID string `gorm:"type:bigint;not null;index"`
-		Status     int    `gorm:"type:tinyint(1);not null; default:1"`
+		Status     string `gorm:"type:tinyint(1);not null; default:1"`
 		// 会创建 user_id 和 category_id 外键的约束
 		User     User
 		Category Category

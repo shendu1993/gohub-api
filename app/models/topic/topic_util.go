@@ -1,6 +1,7 @@
 package topic
 
 import (
+	"gohub-api/app/models"
 	"gohub-api/pkg/app"
 	"gohub-api/pkg/database"
 	"gohub-api/pkg/paginator"
@@ -9,17 +10,17 @@ import (
 )
 
 func Get(idstr string) (topic Topic) {
-	database.DB.Where("id", idstr).First(&topic)
+	database.DB.Where("id = ? AND status != ?", idstr, models.TopicStatusDeleted).First(&topic)
 	return
 }
 
 func GetBy(field, value string) (topic Topic) {
-	database.DB.Where("? = ?", field, value).First(&topic)
+	database.DB.Where("? = ? AND status != ?", field, value, models.TopicStatusDeleted).First(&topic)
 	return
 }
 
 func All() (topics []Topic) {
-	database.DB.Find(&topics)
+	database.DB.Where("status!=?", models.TopicStatusDeleted).Find(&topics)
 	return
 }
 

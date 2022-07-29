@@ -41,3 +41,8 @@ func CurrentUser(c *gin.Context) user.User {
 	// db is now a *DB value
 	return userModel
 }
+
+//CurrentUID 从gin.context 中获取当前登录用户ID
+func CurrentUID(c *gin.Context) string {
+	return c.GetString("current_user_id")
+}

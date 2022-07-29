@@ -18,5 +18,6 @@
   "category_validate_name_not_exists": "名称已经存在",
   "category_validate_description_min_cn": "描述长度需至少 3 个字",
   "category_validate_description_max_cn": "描述长度不能超过 255 个字",
-  "category_validate_update": "Category update fail ~"
+  "category_validate_update_fail": "Category update fail ~",
+  "category_validate_delete_fail": "Category delete fail ~"
 }

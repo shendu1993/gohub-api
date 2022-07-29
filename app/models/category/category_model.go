@@ -10,6 +10,7 @@ type Category struct {
 	models.BaseModel
 	Name        string `json:"name,omitempty"`        //名称
 	Description string `json:"description,omitempty"` //描述
+	Status      int64  `json:"status,omitempty"`      //描述
 	models.CommonTimestampsField
 }
 

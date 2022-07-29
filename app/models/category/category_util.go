@@ -1,6 +1,7 @@
 package category
 
 import (
+	"gohub-api/app/models"
 	"gohub-api/pkg/app"
 	"gohub-api/pkg/database"
 	"gohub-api/pkg/paginator"
@@ -9,17 +10,17 @@ import (
 )
 
 func Get(idstr string) (category Category) {
-	database.DB.Where("id", idstr).First(&category)
+	database.DB.Where("id = ? AND status = ?", idstr, models.CategoryStatusNormal).First(&category)
 	return
 }
 
 func GetBy(field, value string) (category Category) {
-	database.DB.Where("? = ?", field, value).First(&category)
+	database.DB.Where("? = ? AND status = ?", field, value, models.CategoryStatusNormal).First(&category)
 	return
 }
 
 func All() (categories []Category) {
-	database.DB.Find(&categories)
+	database.DB.Where("status", models.CategoryStatusNormal).Find(&categories)
 	return
 }
 

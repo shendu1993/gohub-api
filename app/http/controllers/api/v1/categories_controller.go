@@ -1,6 +1,7 @@
 package v1
 
 import (
+	"gohub-api/app/models"
 	"gohub-api/app/models/category"
 	"gohub-api/app/requests"
 	"gohub-api/pkg/locale"
@@ -27,6 +28,24 @@ func (ctrl *CategoriesController) Show(c *gin.Context) {
 	response.Data(c, categoryModel)
 }
 
+//Delete : soft delete
+func (ctrl *CategoriesController) Delete(c *gin.Context) {
+	//查询是否有该分类
+	categoryModel := category.Get(c.Param("id"))
+	if categoryModel.ID < 1 {
+		response.Abort404(c)
+		return
+	}
+	//soft delete
+	categoryModel.Status = models.CategoryStatusDeleted
+	rowsAffected := categoryModel.Save()
+	if rowsAffected > 0 {
+		response.Success(c)
+	} else {
+		response.Abort500(c, locale.Translate(c, "category_validate_delete_fail"))
+	}
+}
+
 func (ctrl *CategoriesController) Update(c *gin.Context) {
 	//查询是否存在该分类
 	categoryModel := category.Get(c.Param("id"))
@@ -46,7 +65,7 @@ func (ctrl *CategoriesController) Update(c *gin.Context) {
 	if rowsAffected > 0 {
 		response.Data(c, categoryModel)
 	} else {
-		response.Abort500(c, locale.Translate(c, "category_validate_update"))
+		response.Abort500(c, locale.Translate(c, "category_validate_update_fail"))
 	}
 
 }

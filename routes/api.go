@@ -65,10 +65,16 @@ func RegisterAPIRoutes(r *gin.Engine) {
 		cgc := new(controllers.CategoriesController)
 		cgcGroup := v1.Group("/categories")
 		{
+			//分类详情
+			cgcGroup.GET("/:id", middlewares.AuthJWT(), cgc.Show)
+			//分类列表
+			cgcGroup.GET("", middlewares.AuthJWT(), cgc.Index)
 			//创建分类
 			cgcGroup.POST("", middlewares.AuthJWT(), cgc.Store)
 			//更新分类
 			cgcGroup.PUT("/:id", middlewares.AuthJWT(), cgc.Update)
+			//删除分类
+			cgcGroup.DELETE("/:id", middlewares.AuthJWT(), cgc.Delete)
 		}
 	}
 

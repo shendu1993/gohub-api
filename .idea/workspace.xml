@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d7ab55-7e4d-4c73-a43a-0ba3511a08ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/cmd/make/make_policy.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/cmd/make/stubs/policy.stub" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cmd/make/make.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/cmd/make/make.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/api/v1/topics_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/api/v1/topics_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

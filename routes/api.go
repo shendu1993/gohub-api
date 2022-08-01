@@ -80,9 +80,14 @@ func RegisterAPIRoutes(r *gin.Engine) {
 		tc := new(controllers.TopicsController)
 		tcGroup := v1.Group("/topics")
 		{
+			//详情
 			tcGroup.GET("/:id", middlewares.AuthJWT(), tc.Show)
+			//创建
 			tcGroup.POST("", middlewares.AuthJWT(), tc.Store)
+			//更新
 			tcGroup.PUT("/:id", middlewares.AuthJWT(), tc.Update)
+			//删除
+			tcGroup.DELETE("/:id", middlewares.AuthJWT(), tc.Delete)
 		}
 	}
 

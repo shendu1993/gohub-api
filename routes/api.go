@@ -88,6 +88,8 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			tcGroup.PUT("/:id", middlewares.AuthJWT(), tc.Update)
 			//删除
 			tcGroup.DELETE("/:id", middlewares.AuthJWT(), tc.Delete)
+			//列表
+			tcGroup.GET("", tc.Index)
 		}
 	}
 

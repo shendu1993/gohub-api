@@ -91,6 +91,13 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			//列表
 			tcGroup.GET("", tc.Index)
 		}
+
+		//links相关
+		lkc := new(controllers.LinksController)
+		lkcGroup := v1.Group("/links")
+		{
+			lkcGroup.GET("", lkc.Index)
+		}
 	}
 
 	v2 := r.Group("v2")

@@ -1,0 +1,18 @@
+package policies
+
+import (
+	"gohub-api/app/models/{{PackageName}}"
+	"gohub-api/pkg/auth"
+
+	"github.com/gin-gonic/gin"
+)
+
+//CanModifyTopic check can modify topic auth
+func CanModify{{StructName}}(c *gin.Context, {{VariableName}}Model {{PackageName}}.{{StructName}}) bool {
+	return auth.CurrentUID(c) == {{VariableName}}Model.UserID
+}
+
+// func CanView{{StructName}}(c *gin.Context, {{VariableName}}Model {{PackageName}}.{{StructName}}) bool {}
+// func CanCreate{{StructName}}(c *gin.Context, {{VariableName}}Model {{PackageName}}.{{StructName}}) bool {}
+// func CanUpdate{{StructName}}(c *gin.Context, {{VariableName}}Model {{PackageName}}.{{StructName}}) bool {}
+// func CanDelete{{StructName}}(c *gin.Context, {{VariableName}}Model {{PackageName}}.{{StructName}}) bool {}

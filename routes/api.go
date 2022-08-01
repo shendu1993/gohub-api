@@ -82,7 +82,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 		{
 			tcGroup.GET("/:id", middlewares.AuthJWT(), tc.Show)
 			tcGroup.POST("", middlewares.AuthJWT(), tc.Store)
-
+			tcGroup.PUT("/:id", middlewares.AuthJWT(), tc.Update)
 		}
 	}
 

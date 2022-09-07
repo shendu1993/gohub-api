@@ -13,6 +13,5 @@ type LinksController struct {
 
 //Index Links 列表
 func (ctrl *LinksController) Index(c *gin.Context) {
-	links := link.GetByLimit(5)
-	response.Data(c, links)
+	response.Data(c, link.AllCached())
 }

@@ -10,8 +10,8 @@ import (
 //SetupCache 缓存
 func SetupCache() {
 	rds := cache.NewRedisStore(
-		fmt.Sprintf("%v:%v", config.GetString("redis.host")),
-		config.GetString("redis.port"),
+		fmt.Sprintf("%v:%v", config.GetString("redis.host"), config.GetString("redis.port")),
+		config.GetString("redis.username"),
 		config.GetString("redis.password"),
 		config.GetInt("redis.database_cache"),
 	)

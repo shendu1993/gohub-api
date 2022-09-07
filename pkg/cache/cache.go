@@ -3,6 +3,7 @@ package cache
 
 import (
 	"encoding/json"
+	"gohub-api/pkg/helpers"
 	"gohub-api/pkg/logger"
 	"sync"
 	"time"
@@ -33,6 +34,9 @@ func Set(key string, obj interface{}, expireTime time.Duration) {
 func Get(key string) interface{} {
 	stringValue := Cache.Store.Get(key)
 	var wanted interface{}
+	if helpers.Empty(stringValue) {
+		return ""
+	}
 	err := json.Unmarshal([]byte(stringValue), &wanted)
 	logger.LogIf(err)
 	return wanted

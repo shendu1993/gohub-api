@@ -49,6 +49,7 @@ func GetByLimit(limit int) (link []Link) {
 	return
 }
 
+//links:all
 func AllCached() (links []Link) {
 	//设置缓存key
 	cacheKey := "links:all"

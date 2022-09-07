@@ -13,10 +13,8 @@ type RedisStore struct {
 }
 
 func (s *RedisStore) Forget(key string) {
-	//TODO implement me
-	panic("implement me")
+	s.RedisClient.Del(s.KeyPrefix + key)
 }
-
 func NewRedisStore(address string, username string, password string, db int) *RedisStore {
 	rs := &RedisStore{}
 	rs.RedisClient = redis.NewClient(address, username, password, db)
